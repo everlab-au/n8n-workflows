@@ -1,0 +1,43 @@
+{
+  "createdAt": "2025-07-11T22:25:15.686Z",
+  "updatedAt": "2025-07-28T03:39:23.000Z",
+  "id": "Vs7WP399vVhJLVDV",
+  "name": "Clinician-Bugs <> Linear Triaging",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "trigger": [
+          "message"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C08TKH7NH6U",
+          "mode": "list",
+          "cachedResultName": "clinician-bugs"
+        },
+        "options": {
+          "userIds": [
+            "U096DEECB42"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        900
+      ],
+      "id": "a0390659-4f0f-456b-93b9-7ac6fc990e94",
+      "name": "clinician-bugs trigger",
+      "webhookId": "b081b345-e528-4fc1-be4f-09066667d67b",
+      "credentials": {
+        "slackApi": {
+          "id": "ps9nImQE4gR6QJTT",
+          "name": "clinician-bugs API"
+        }
+      }
+    }
+  ]
+}

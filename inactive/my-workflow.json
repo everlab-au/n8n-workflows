@@ -1,0 +1,88 @@
+{
+  "createdAt": "2025-07-06T01:25:10.681Z",
+  "updatedAt": "2025-07-06T01:25:10.681Z",
+  "id": "9v07RGnoYEXKAKnz",
+  "name": "My workflow",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "teamId": "6b59e81d-57ac-4f81-af62-9986e383fc2e",
+        "resources": [
+          "issue"
+        ]
+      },
+      "type": "n8n-nodes-base.linearTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "32d35e86-d217-4f7d-b7a4-f7ca4c2274e2",
+      "name": "Linear Trigger",
+      "webhookId": "467f6bee-e97e-498e-9793-03429a79a87e",
+      "credentials": {
+        "linearApi": {
+          "id": "BKBp4fOWPv7cVhay",
+          "name": "Linear account"
+        }
+      }
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "df3cf0dd-f290-4cae-817e-88736f19d673",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-07-06T01:25:10.683Z",
+      "updatedAt": "2025-07-06T01:25:10.683Z",
+      "role": "workflow:owner",
+      "workflowId": "9v07RGnoYEXKAKnz",
+      "projectId": "1DfIimhPmWjR0zym",
+      "project": {
+        "createdAt": "2025-07-06T01:09:36.193Z",
+        "updatedAt": "2025-07-06T01:09:38.393Z",
+        "id": "1DfIimhPmWjR0zym",
+        "name": "Anshul Jain <anshul@everlab.com.au>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "projectRelations": [
+          {
+            "createdAt": "2025-07-06T01:09:36.194Z",
+            "updatedAt": "2025-07-06T01:09:36.194Z",
+            "role": "project:personalOwner",
+            "userId": "fb2c647e-f577-4576-81f7-fb8ccd49b7d6",
+            "projectId": "1DfIimhPmWjR0zym",
+            "user": {
+              "createdAt": "2025-07-06T01:09:34.917Z",
+              "updatedAt": "2025-07-06T01:09:38.000Z",
+              "id": "fb2c647e-f577-4576-81f7-fb8ccd49b7d6",
+              "email": "anshul@everlab.com.au",
+              "firstName": "Anshul",
+              "lastName": "Jain",
+              "personalizationAnswers": null,
+              "settings": {
+                "userActivated": false
+              },
+              "role": "global:owner",
+              "disabled": false,
+              "mfaEnabled": false,
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "tags": []
+}

@@ -1,0 +1,43 @@
+{
+  "createdAt": "2025-07-31T08:31:10.460Z",
+  "updatedAt": "2025-07-31T08:31:10.460Z",
+  "id": "GSqeYWFeJ2b2ApZo",
+  "name": "Doctor Onboarding - Typeform to Airtable",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "typeform-doctor-onboarding",
+        "options": {}
+      },
+      "name": "Typeform Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2000,
+        0
+      ],
+      "id": "webhook-1",
+      "webhookId": "typeform-doctor-onboarding"
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": "app0yJQw5vWqkK5ll",
+        "table": "tblWHMNMtlJX7tS9u",
+        "filterByFormula": "=AND({Email} = '{{ $json.body.form_response.answers.find(a => a.field.ref === 'email').email }}')",
+        "options": {}
+      },
+      "name": "Find User by Email",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 1,
+      "position": [
+        -1600,
+        -100
+      ],
+      "id": "airtable-search-user"
+    }
+  ]
+}

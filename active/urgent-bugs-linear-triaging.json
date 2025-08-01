@@ -1,0 +1,39 @@
+{
+  "createdAt": "2025-07-22T05:57:24.490Z",
+  "updatedAt": "2025-07-30T04:50:56.000Z",
+  "id": "EYLeMfdGQv4NKJFm",
+  "name": "Urgent-Bugs <> Linear Triaging",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "trigger": [
+          "message"
+        ],
+        "channelId": {
+          "__rl": true,
+          "value": "C06RHC2DG4B",
+          "mode": "list",
+          "cachedResultName": "urgent-bugs"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.slackTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1980,
+        -80
+      ],
+      "id": "4366ce13-050d-4c12-94ac-47272bce5614",
+      "name": "urgent-bugs trigger",
+      "webhookId": "b081b345-e528-4fc1-be4f-09066667d67b",
+      "credentials": {
+        "slackApi": {
+          "id": "iXFKpTh23EIZ3fGb",
+          "name": "urgent-bugs API"
+        }
+      }
+    }
+  ]
+}

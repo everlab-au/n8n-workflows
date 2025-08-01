@@ -1,0 +1,26 @@
+{
+  "createdAt": "2025-07-25T01:31:22.799Z",
+  "updatedAt": "2025-07-30T00:59:18.000Z",
+  "id": "cbBN9x5sx8kIfZDP",
+  "name": "Front <> Linear Triaging",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "front-bug-webhook-listener",
+        "options": {}
+      },
+      "name": "Front Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2380,
+        40
+      ],
+      "id": "9e1ea978-2c81-4888-9698-a70f9f05df1d",
+      "webhookId": "23507fdb-bffa-43b8-b6ad-4ae8934b4381"
+    }
+  ]
+}

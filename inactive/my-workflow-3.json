@@ -1,0 +1,110 @@
+{
+  "createdAt": "2025-07-30T22:31:05.890Z",
+  "updatedAt": "2025-07-30T22:31:05.890Z",
+  "id": "HKKZIOrwt9ZCPIVb",
+  "name": "My workflow 3",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a4558f5e-3373-4ee5-88c8-f29d0d347bd8",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "projectId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleBigQuery",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "e5de836a-c3b6-46ca-8a9c-4ab16dc41587",
+      "name": "Execute a SQL query"
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "eb747f88-384d-4855-81a9-2c44dabb1a0e",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "createdAt": "2025-07-30T22:31:05.893Z",
+      "updatedAt": "2025-07-30T22:31:05.893Z",
+      "role": "workflow:owner",
+      "workflowId": "HKKZIOrwt9ZCPIVb",
+      "projectId": "1DfIimhPmWjR0zym",
+      "project": {
+        "createdAt": "2025-07-06T01:09:36.193Z",
+        "updatedAt": "2025-07-06T01:09:38.393Z",
+        "id": "1DfIimhPmWjR0zym",
+        "name": "Anshul Jain <anshul@everlab.com.au>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "projectRelations": [
+          {
+            "createdAt": "2025-07-06T01:09:36.194Z",
+            "updatedAt": "2025-07-06T01:09:36.194Z",
+            "role": "project:personalOwner",
+            "userId": "fb2c647e-f577-4576-81f7-fb8ccd49b7d6",
+            "projectId": "1DfIimhPmWjR0zym",
+            "user": {
+              "createdAt": "2025-07-06T01:09:34.917Z",
+              "updatedAt": "2025-07-06T01:09:38.000Z",
+              "id": "fb2c647e-f577-4576-81f7-fb8ccd49b7d6",
+              "email": "anshul@everlab.com.au",
+              "firstName": "Anshul",
+              "lastName": "Jain",
+              "personalizationAnswers": null,
+              "settings": {
+                "userActivated": false
+              },
+              "role": "global:owner",
+              "disabled": false,
+              "mfaEnabled": false,
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "tags": []
+}

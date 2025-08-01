@@ -1,0 +1,39 @@
+{
+  "createdAt": "2025-07-31T04:13:49.340Z",
+  "updatedAt": "2025-07-31T08:48:01.000Z",
+  "id": "GIkyjcxihIlteVxr",
+  "name": "My workflow 4",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "be718955-bd48-47c4-a9e3-e3afe780bd3d",
+      "name": "When clicking 'Execute workflow'"
+    },
+    {
+      "parameters": {
+        "projectId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleBigQuery",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "b32ce3b9-ea07-4ca4-926c-4281b5c3e34c",
+      "name": "Execute a SQL query"
+    }
+  ]
+}

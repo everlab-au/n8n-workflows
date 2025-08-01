@@ -1,0 +1,227 @@
+{
+  "createdAt": "2025-07-18T04:28:05.882Z",
+  "updatedAt": "2025-07-18T04:48:41.000Z",
+  "id": "8gfqoXMwLe5doMst",
+  "name": "Teamtailor Notification Classifier",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "filters": {
+          "labelIds": [
+            "Label_3166575018381433350"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "379f5b9e-b603-4b4d-a4ff-b053ac536bbd",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "fIOEaWwS2JJjjK2L",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.snippet }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "Relevant",
+              "description": "This email is relevant to Sam in his role in technical hiring. It is about candidates who have been talking with him, are further through the funnel, have upcoming interviews"
+            },
+            {
+              "category": "Not Relevant",
+              "description": "This email isn't relevant to Sam, it'll be them talking another team member (e.g. Mitch), status updates from early in the recruitment pipeline (e.g. new applicants), things right at the end of the journey such as contracts, salary and visas."
+            }
+          ]
+        },
+        "options": {
+          "systemPromptTemplate": "Please classify the email body provided by the user into one of the following categories: {categories}, and use the provided formatting instructions below. Don't explain, and only output the json."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "590c7b1c-2fa2-4873-b597-f3d959db1986",
+      "name": "Text Classifier"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        300,
+        220
+      ],
+      "id": "3980db29-92f3-4f6a-b020-1f97c804d566",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "IJGZBtyMInsiuOBG",
+          "name": "Anthropic account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "user",
+        "user": {
+          "__rl": true,
+          "value": "U08MR4GFDAA",
+          "mode": "list",
+          "cachedResultName": "sam.collisbird"
+        },
+        "text": "=*Relevant Teamtailor Update*\n\n{{ $('Gmail Trigger').item.json.snippet }}\n\nSee full email: <https://mail.google.com/mail/u/sam.collisbird@everlab.com.au/#inbox/{{ $('Gmail Trigger').item.json.id }}>",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        580,
+        -100
+      ],
+      "id": "c9c05707-e77f-4e75-ae00-829921f9e7e5",
+      "name": "Send a message",
+      "webhookId": "c04a452f-1de9-4ba8-80f0-0ada07eda3db",
+      "credentials": {
+        "slackApi": {
+          "id": "ouUfL3qTCI9EQhUE",
+          "name": "n8n bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Gmail Trigger": {
+      "Gmail Trigger": {
+        "lastTimeChecked": 1753938000,
+        "possibleDuplicates": [
+          "1985ed9fbbfdda38"
+        ]
+      }
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "c2743170-b084-413f-9d02-17e58cf9293c",
+  "triggerCount": 1,
+  "shared": [
+    {
+      "createdAt": "2025-07-18T04:28:05.885Z",
+      "updatedAt": "2025-07-18T04:28:05.885Z",
+      "role": "workflow:owner",
+      "workflowId": "8gfqoXMwLe5doMst",
+      "projectId": "gOWOa3A7TDlpvDyJ",
+      "project": {
+        "createdAt": "2025-07-18T00:55:02.420Z",
+        "updatedAt": "2025-07-18T01:44:37.318Z",
+        "id": "gOWOa3A7TDlpvDyJ",
+        "name": "Sam Collis-Bird <sam.collisbird@everlab.com.au>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "projectRelations": [
+          {
+            "createdAt": "2025-07-18T00:55:02.422Z",
+            "updatedAt": "2025-07-18T00:55:02.422Z",
+            "role": "project:personalOwner",
+            "userId": "fea818f8-216d-45f4-8065-ca23bd11b05b",
+            "projectId": "gOWOa3A7TDlpvDyJ",
+            "user": {
+              "createdAt": "2025-07-18T00:55:02.418Z",
+              "updatedAt": "2025-07-24T07:22:24.003Z",
+              "id": "fea818f8-216d-45f4-8065-ca23bd11b05b",
+              "email": "sam.collisbird@everlab.com.au",
+              "firstName": "Sam",
+              "lastName": "Collis-Bird",
+              "personalizationAnswers": null,
+              "settings": {
+                "firstSuccessfulWorkflowId": "OvB8csMKVrnbmnOS",
+                "userActivated": true,
+                "userActivatedAt": 1752805227347,
+                "easyAIWorkflowOnboarded": true,
+                "npsSurvey": {
+                  "responded": true,
+                  "lastShownAt": 1753341739284
+                }
+              },
+              "role": "global:admin",
+              "disabled": false,
+              "mfaEnabled": false,
+              "isPending": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "tags": []
+}

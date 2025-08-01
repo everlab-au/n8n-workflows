@@ -1,0 +1,41 @@
+{
+  "createdAt": "2025-07-08T01:09:15.071Z",
+  "updatedAt": "2025-07-11T04:09:17.000Z",
+  "id": "Td1YDStl0NAe2owl",
+  "name": "Ticket Name and Shame Bot",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#eng-name-and-shame",
+          "mode": "name"
+        },
+        "text": "=<@{{ $('getSlackUser').item.json.user.id }}> Problems with your ticket: \n{{ $('Trigger on Linear Event in Eng').item.json.data.url }}\n\n{{ $('Ticket Screenr').item.json.output.replace(/^- /gm, \"* \").replaceAll(\"**\", \"*\") }}\n",
+        "otherOptions": {
+          "unfurl_links": false,
+          "unfurl_media": false
+        }
+      },
+      "id": "c327e4fd-82f8-44cf-87e7-deea173ece74",
+      "name": "Send Shame Message",
+      "type": "n8n-nodes-base.slack",
+      "position": [
+        3340,
+        660
+      ],
+      "typeVersion": 2,
+      "webhookId": "eb67ccfd-cdab-40f2-9501-bfc51b5b7c8c",
+      "alwaysOutputData": false,
+      "credentials": {
+        "slackApi": {
+          "id": "ouUfL3qTCI9EQhUE",
+          "name": "n8n bot"
+        }
+      }
+    }
+  ]
+}

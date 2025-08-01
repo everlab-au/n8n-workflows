@@ -1,0 +1,45 @@
+{
+  "createdAt": "2025-07-18T01:56:32.135Z",
+  "updatedAt": "2025-07-28T00:30:52.000Z",
+  "id": "OvB8csMKVrnbmnOS",
+  "name": "Technical Interview Prep Reminder",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        },
+        "calendarId": {
+          "__rl": true,
+          "value": "sam.collisbird@everlab.com.au",
+          "mode": "list",
+          "cachedResultName": "sam.collisbird@everlab.com.au"
+        },
+        "triggerOn": "eventCreated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTrigger",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -180
+      ],
+      "id": "2dd2bc79-e066-44f5-af89-7f583be23a00",
+      "name": "Google Calendar Trigger",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "B53hP4VCYHyfIL0I",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ]
+}
